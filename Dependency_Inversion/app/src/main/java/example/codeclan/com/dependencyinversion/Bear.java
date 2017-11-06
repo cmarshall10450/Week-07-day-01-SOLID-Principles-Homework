@@ -15,25 +15,18 @@ package example.codeclan.com.dependencyinversion;
 // All of that lower-level complexity is abstracted away from you when you use your laptop.
 // The same is true for our Bear and their Diary.
 
-import java.util.ArrayList;
+public class Bear {
 
-public class Bear{
+  private Diary journal;
 
-    private Diary journal;
+  public Bear() {
+    this.journal = new Diary();
+    // An instance of Diary is newed up in the Bear constructor.
+    // This means the Bear class is "dependent" on the Diary class.
+    // The Bear is stuck with a Diary, but it shouldn't really matter what kind of journal it is, as long as it can .write()
+  }
 
-    public Bear(){
-        this.journal = new Diary();
-        // An instance of Diary is newed up in the Bear constructor.
-        // This means the Bear class is "dependent" on the Diary class.
-        // The Bear is stuck with a Diary, but it shouldn't really matter what kind of journal it is, as long as it can .write()
-    }
-
-    public Diary getJournal(){
-        return this.journal;
-    }
-
-    public void writeJournal(String text){
-        this.journal.write(text);
-    }
-
+  public Diary getJournal() {
+    return this.journal;
+  }
 }
