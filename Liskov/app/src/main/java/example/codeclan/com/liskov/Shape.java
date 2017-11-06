@@ -6,4 +6,8 @@ package example.codeclan.com.liskov;
 
 abstract class Shape {
 
+  public String getFullName() {
+    return "I'm drawing a " + this.getClass().getSimpleName().toLowerCase() + "!";
+  }
+
 }

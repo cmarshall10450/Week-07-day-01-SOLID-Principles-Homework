@@ -5,4 +5,5 @@ package example.codeclan.com.liskov;
  */
 
 public class Triangle extends Shape {
+
 }
